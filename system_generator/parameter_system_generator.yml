@@ -1,0 +1,46 @@
+#
+system_description: this system contain one (16,0) zigzag tube and one graphene sheet of 9 unit block.
+
+
+General Desccription:
+   This file contains the input parameters to generate the system.
+   The system consists of a tube on top of the graphene sheets.
+   The graphene sheet will be always in the 'X-Z' plane.  
+   The tube will be always zizgaz and the tube axis is 'Z'. The tube will be in the middle of the graphene. 
+   However, the overlap distance (Z direction) as well as the gap between graphene and tube (Y direction) can vary.
+   As input parameter user will provide the xyz file that contains the coordinates of one unit cell of the tube.
+   The program checks the diameter of the tube. If the ('num_unit_X'*sqrt(3)*1.42) is less than (tube_diameter + 10A*)
+   then program will raise an error.
+   
+Input Parameter Description:
+   graphene:
+      num_unit_X: number of unit cell in the X direction (number of rows)
+      num_unit_Z: number of unit cell in the Z direction (number of columns)
+   tube:
+      tube_dir: address of the directory that contians xyz file
+      tube_name: name of the xyz file
+      tube_num_unit: number of unit cell of the tube in the quantum system (this input defines the number of unit cell of tube without overlap with graphene)
+   common:
+      left_graphene_tube_overlap: number of unit cell that graphene and tube overlap      
+      graphene_tube_distance: gap between graphene and tube   
+      system_file_name: name of the coordinate file (with .xyz suffix)
+      map_file_name: name of the map file (with .txt suffix)
+   
+   
+Input:
+   graphene:
+      num_unit_X: 10
+      num_unit_Z: 6
+   tube:
+      tube_dir: C:\Users\PRAMIT\Desktop
+      tube_name: nt-16-0-1.xyz
+      tube_num_unit: 10
+   common:
+      left_graphene_tube_overlap: 1      
+      right_graphene_tube_overlap: 3
+      graphene_tube_distance: 3.05
+      output_file_dir: C:\Users\PRAMIT\Desktop
+      system_file_name: system6.xyz
+      map_file_name: system6.xyz
+   
+   
